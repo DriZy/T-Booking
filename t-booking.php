@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: T-Booking
  * Plugin URI: https://example.com
@@ -8,7 +9,10 @@
  * Author URI: https://github.com/DriZy/
  * License: GPLv2 or later
  * Text Domain: tbooking
+ *
+ * @package T-Booking
  */
+
 
 // Security check
 if (!defined('ABSPATH')) {
@@ -26,6 +30,12 @@ require_once(TBOOKING_PLUGIN_DIR . 'includes/tbooking-woocommerce-hooks.php');
 
 // Load textdomain for translation
 add_action('plugins_loaded', 'tbooking_load_textdomain');
+/**
+ * Load plugin textdomain for translations.
+ *
+ * @package T-Booking
+ * @since 1.0.0
+ */
 function tbooking_load_textdomain() {
     load_plugin_textdomain('tbooking', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
@@ -34,17 +44,34 @@ function tbooking_load_textdomain() {
 register_activation_hook(__FILE__, 'tbooking_activate');
 register_deactivation_hook(__FILE__, 'tbooking_deactivate');
 
+/**
+ * Plugin activation callback.
+ *
+ * @package T-Booking
+ * @since 1.0.0
+ */
 function tbooking_activate() {
     // Add default options or create necessary tables
     tbooking_default_options();
 }
 
+/**
+ * Plugin deactivation callback.
+ *
+ * @package T-Booking
+ * @since 1.0.0
+ */
 function tbooking_deactivate() {
     // Clean up on deactivation
     delete_option('tbooking_airbnb_api_key');
 }
 
-// Add default options
+/**
+ * Add default options for the plugin.
+ *
+ * @package T-Booking
+ * @since 1.0.0
+ */
 function tbooking_default_options() {
     add_option('tbooking_min_days', 2);
     add_option('tbooking_max_days', 30);
