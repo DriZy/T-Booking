@@ -5,7 +5,7 @@
  * Plugin URI: https://example.com
  * Description: Custom Booking Plugin for WooCommerce with Airbnb API integration.
  * Version: 1.0.0
- * Author: Tabi Idris Nfongang
+ * Author: Tabi Idris
  * Author URI: https://github.com/DriZy/
  * License: GPLv2 or later
  * Text Domain: tbooking
@@ -25,7 +25,7 @@ define('TBOOKING_VERSION', '1.0.0');
 
 // Include required files
 require_once(TBOOKING_PLUGIN_DIR . 'includes/tbooking-settings.php');
-require_once(TBOOKING_PLUGIN_DIR . 'includes/tbooking-ical-sync.php');
+require_once(TBOOKING_PLUGIN_DIR . 'includes/tbooking-woocommerce.php');
 require_once(TBOOKING_PLUGIN_DIR . 'includes/tbooking-woocommerce-hooks.php');
 
 // Load textdomain for translation
