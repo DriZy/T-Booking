@@ -1,0 +1,8 @@
+:root {
+    --background-color: #ffffff; /* Default background color */
+    --text-color: #000000; /* Default text color */
+}
+
+.booking-calendar, .booking-list {
+    padding: 20px;
+}
